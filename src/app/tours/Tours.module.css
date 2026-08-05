@@ -27,19 +27,25 @@
   top: var(--header-height);
   z-index: 10;
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .filterFlex {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
 }
 
 .searchBox {
   flex-grow: 1;
   max-width: 400px;
+  width: 100%;
   position: relative;
 }
 
@@ -70,22 +76,28 @@
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .filterGroup {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 100%;
 }
 
 .filterBtn {
   background: none;
   border: 1px solid var(--border-color);
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1.1rem;
   font-size: 0.85rem;
   font-weight: 600;
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: var(--transition-quick);
+  white-space: nowrap;
 }
 
 .filterBtn:hover {
@@ -97,21 +109,6 @@
   background-color: var(--primary);
   color: #ffffff;
   border-color: var(--primary);
-}
-
-@media (max-width: 768px) {
-  .filterFlex {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-  .searchBox {
-    max-width: 100%;
-  }
-  .filterGroups {
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-  }
 }
 
 /* Tour List Layout */
@@ -355,13 +352,82 @@
 }
 
 @media (max-width: 992px) {
+  .filterFlex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .searchBox {
+    max-width: 100%;
+  }
+
+  .filterGroups {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .filterGroup {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
   .tourCard {
     grid-template-columns: 1fr;
   }
+
   .tourBanner {
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 1.5rem;
+    min-height: 280px;
   }
+
   .tourContent {
-    padding: 2rem;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .tourSpecsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pageHeader {
+    padding: 3rem 1rem;
+  }
+
+  .headerContent h1 {
+    font-size: 2rem;
+  }
+
+  .filterBar {
+    padding: 1rem 0;
+  }
+
+  .filterBtn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .tourContent {
+    padding: 1.25rem 1rem;
+  }
+
+  .tourSpecsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.85rem;
+  }
+
+  .tourHeading h2 {
+    font-size: 1.6rem;
+  }
+
+  .priceValue {
+    font-size: 1.8rem;
   }
 }
