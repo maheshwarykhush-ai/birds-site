@@ -1,0 +1,367 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.headerContent h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.headerContent p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Filters & Search section */
+.filterBar {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 10;
+  box-shadow: var(--shadow-sm);
+}
+
+.filterFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  flex-grow: 1;
+  max-width: 400px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-quick);
+}
+
+.searchInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--fg-muted);
+}
+
+.filterGroups {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filterBtn {
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-quick);
+}
+
+.filterBtn:hover {
+  background-color: rgba(27, 61, 43, 0.05);
+  border-color: var(--primary);
+}
+
+.activeFilterBtn {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .filterFlex {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .searchBox {
+    max-width: 100%;
+  }
+  .filterGroups {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Tour List Layout */
+.toursListSection {
+  padding: 5rem 0;
+}
+
+.toursFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.tourCard {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.tourCard:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(27, 61, 43, 0.15);
+}
+
+.tourBanner {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 2rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.tourBannerImg {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1;
+}
+
+.tourCard:hover .tourBannerImg {
+  transform: scale(1.06);
+}
+
+.tourBannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(17, 34, 25, 0.7) 0%, rgba(10, 20, 15, 0.92) 100%);
+  z-index: 2;
+}
+
+.tourBannerInner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.tourHeading h2 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  line-height: 1.15;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tourSubtitle {
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+.tourPriceInfo {
+  margin-top: 2rem;
+}
+
+.priceLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.1em;
+}
+
+.priceValue {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: var(--font-serif);
+}
+
+.pricePer {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tourContent {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tourSpecsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  background-color: var(--bg-light);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.specLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
+.specValue {
+  font-size: 0.95rem;
+  color: var(--fg-dark);
+  font-weight: 500;
+}
+
+.targetsSection h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.targetsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.targetBadge {
+  background-color: rgba(27, 61, 43, 0.05);
+  border: 1px solid rgba(27, 61, 43, 0.1);
+  color: var(--primary);
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+}
+
+/* Accordion Itinerary Styles */
+.itinerarySection {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  user-select: none;
+}
+
+.accordionHeader h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.accordionIcon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  color: var(--primary);
+}
+
+.accordionIconExpanded {
+  transform: rotate(180deg);
+}
+
+.itineraryTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 2px solid var(--border-color);
+  padding-left: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.itineraryDay {
+  position: relative;
+}
+
+.itineraryDay::before {
+  content: '';
+  position: absolute;
+  left: -2.05rem;
+  top: 0.25rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.dayTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.dayDesc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 992px) {
+  .tourCard {
+    grid-template-columns: 1fr;
+  }
+  .tourBanner {
+    padding: 2.5rem 2rem;
+  }
+  .tourContent {
+    padding: 2rem;
+  }
+}

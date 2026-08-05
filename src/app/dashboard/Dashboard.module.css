@@ -1,0 +1,298 @@
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #ffffff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.headerContent h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.headerContent p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+.dashboardSection {
+  padding: 4rem 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 992px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statCard {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  font-family: var(--font-serif);
+}
+
+/* Dashboard Columns split: Main Table & Side Charts */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Booking Control Section */
+.controlCard {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.tableFilters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Booking Table styling */
+.tableContainer {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.bookingsTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.bookingsTable th {
+  background-color: var(--bg-light);
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.bookingsTable td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.bookingsTable tr:last-child td {
+  border-bottom: none;
+}
+
+.bookingsTable tr:hover td {
+  background-color: rgba(27, 61, 43, 0.01);
+}
+
+/* Status badging */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.statusPending {
+  background-color: rgba(212, 175, 55, 0.15);
+  color: #b78a04;
+}
+
+.statusConfirmed {
+  background-color: rgba(27, 61, 43, 0.15);
+  color: var(--primary);
+}
+
+.statusCancelled {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #555555;
+}
+
+/* Actions buttons in table */
+.actionBtnGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionBtnConfirm {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: var(--transition-quick);
+}
+
+.actionBtnConfirm:hover {
+  background-color: var(--primary-light);
+  transform: scale(1.1);
+}
+
+.actionBtnCancel {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: var(--transition-quick);
+}
+
+.actionBtnCancel:hover {
+  background-color: #e5e7eb;
+  transform: scale(1.1);
+}
+
+/* Chart side panel */
+.chartCard {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chartTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.popularityList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.popItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.popHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.popName {
+  font-weight: 600;
+  color: var(--fg-dark);
+}
+
+.popCount {
+  color: var(--fg-muted);
+}
+
+.popTrack {
+  height: 8px;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.popBar {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-full);
+  transition: width 0.6s ease;
+}
+
+.seedingBtn {
+  background: none;
+  border: 1px dashed var(--primary);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: var(--transition-quick);
+}
+
+.seedingBtn:hover {
+  background-color: var(--primary-glow);
+}
